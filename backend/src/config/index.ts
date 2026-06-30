@@ -1,7 +1,10 @@
 import dotenv from 'dotenv';
 import path from 'path';
 
-dotenv.config({ path: path.resolve(__dirname, '../../.env') });
+const envPath = path.resolve(__dirname, '../../.env');
+dotenv.config({ path: envPath });
+// Also try loading from current working directory (production)
+dotenv.config();
 
 export const config = {
   env: process.env.NODE_ENV || 'development',

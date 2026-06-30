@@ -2,8 +2,11 @@
 const nextConfig = {
   transpilePackages: ['@sms/shared'],
   images: {
-    domains: ['localhost'],
+    remotePatterns: [
+      { protocol: 'https', hostname: '**' },
+    ],
   },
+  output: 'standalone',
 };
 
 module.exports = nextConfig;
